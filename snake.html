@@ -15,6 +15,9 @@
       --muted: #9ba8a6;
       --green: #58d68d;
       --green-2: #2ea66a;
+      --snake: #4da3ff;
+      --snake-2: #1f7ae0;
+      --snake-head: #8ec5ff;
       --food: #ff6b6b;
       --gold: #ffd166;
       --shadow: rgba(0, 0, 0, 0.28);
@@ -470,12 +473,12 @@
         const x = part.x * cell + 3;
         const y = part.y * cell + 3;
         const radius = index === 0 ? 8 : 6;
-        ctx.fillStyle = index === 0 ? varColor("--gold") : index % 2 ? varColor("--green") : "#47c983";
+        ctx.fillStyle = index === 0 ? varColor("--snake-head") : index % 2 ? varColor("--snake") : varColor("--snake-2");
         roundedRect(x, y, cell - 6, cell - 6, radius);
         ctx.fill();
 
         if (index === 0) {
-          ctx.fillStyle = "#192015";
+          ctx.fillStyle = "#07182f";
           const eyeOffsetX = dir.x === 0 ? 7 : dir.x > 0 ? 15 : 7;
           const eyeOffsetY = dir.y === 0 ? 7 : dir.y > 0 ? 15 : 7;
           ctx.beginPath();
